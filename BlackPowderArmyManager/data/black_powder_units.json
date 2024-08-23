@@ -1,21 +1,6 @@
 {
   "British": [
     {
-      "name": "line infantry",
-      "country": "British",
-      "type": "Standard",
-      "armament": "Rifle",
-      "handToHand": "Bayonet",
-      "shooting": "Accurate",
-      "morale": "High",
-      "stamina": "High",
-      "size": "Large",
-      "points": "15 Points",
-      "special": [
-        "Engineer"
-      ]
-    },
-    {
       "name": "cavalry",
       "country": "British",
       "type": "Standard",

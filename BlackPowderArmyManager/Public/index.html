@@ -26,11 +26,19 @@
         <h2>Your Army:</h2>
         <ul id="army-list"></ul>
 
-        <!-- New section to display the total points -->
         <p>Total Points: <span id="total-points">0</span></p>
 
         <button id="save-army-btn">Save Army</button>
         <a href="manage-units.html">Manage Units</a>
+    </div>
+
+    <!-- Modal for displaying special attribute description -->
+    <div id="special-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="special-name"></h3>
+            <p id="special-description"></p>
+        </div>
     </div>
 
     <script src="js/script.js"></script>

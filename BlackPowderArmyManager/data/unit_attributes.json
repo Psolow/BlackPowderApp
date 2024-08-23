@@ -54,8 +54,8 @@
         "20 Points"
     ],
     "special": [
-        "Sharpshooter",
-        "Grenadier",
-        "Engineer"
+        {"name":"Sharpshooter", "Description":"lorum ipsum"},
+        {"name":"Grenadier", "Description":"lorum ipsum"},
+        {"name":"Engineer", "Description":"lorum ipsum"}
     ]
 }

@@ -5,15 +5,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const countrySelect = document.getElementById('country-select');
     const unitSelect = document.getElementById('unit-select');
     const armyList = document.getElementById('army-list');
-    const totalPointsElement = document.getElementById('total-points'); // New line
+    const totalPointsElement = document.getElementById('total-points');
+    const specialModal = document.getElementById('special-modal');
+    const specialName = document.getElementById('special-name');
+    const specialDescription = document.getElementById('special-description');
+    const closeModal = document.querySelector('.close');
+    
     let userId;
     let currentArmy = [];
-    let totalPoints = 0; // New line
+    let totalPoints = 0;
+
+    const specialAttributes = {}; // To store special attributes for quick lookup
 
     const loadAttributes = async () => {
         try {
             const response = await fetch('/unit-attributes');
             const attributes = await response.json();
+
+            // Store special attributes for quick lookup
+            attributes.special.forEach(attr => {
+                specialAttributes[attr.name] = attr.Description;
+            });
+
             attributes.nation.forEach(country => {
                 const option = document.createElement('option');
                 option.value = country;
@@ -68,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 Stamina: ${unit.stamina}<br>
                 Size: ${unit.size}<br>
                 Points: ${unit.points}<br>
-                Special: ${unit.special.join(', ')}<br>
+                Special: ${unit.special.map(attr => `<span class="special-attr" data-name="${attr}">${attr}</span>`).join(', ')}<br>
                 <button data-index="${index}" class="delete-unit-btn">Delete</button>
             `;
             armyList.appendChild(li);
@@ -79,6 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
             button.addEventListener('click', deleteUnit);
         });
 
+        // Attach event listeners for special attribute descriptions
+        document.querySelectorAll('.special-attr').forEach(attr => {
+            attr.addEventListener('click', showSpecialDescription);
+        });
+
         totalPointsElement.textContent = totalPoints; // Update the displayed total points
     };
 
@@ -87,6 +105,23 @@ document.addEventListener('DOMContentLoaded', () => {
         totalPoints -= parseInt(currentArmy[index].points.split(' ')[0]); // Deduct the points of the deleted unit
         currentArmy.splice(index, 1);
         renderArmyList();
+    };
+
+    const showSpecialDescription = (e) => {
+        const attrName = e.target.dataset.name;
+        specialName.textContent = attrName;
+        specialDescription.textContent = specialAttributes[attrName] || 'No description available.';
+        specialModal.style.display = 'block';
+    };
+
+    closeModal.addEventListener('click', () => {
+        specialModal.style.display = 'none';
+    });
+
+    window.onclick = function(event) {
+        if (event.target == specialModal) {
+            specialModal.style.display = 'none';
+        }
     };
 
     idForm.addEventListener('submit', async (e) => {
