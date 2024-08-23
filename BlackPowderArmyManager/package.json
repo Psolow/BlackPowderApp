@@ -1,0 +1,17 @@
+{
+  "name": "blackpowderarmymanager",
+  "version": "1.0.0",
+  "description": "A web app to manage black powder armies",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.19.2",
+    "uuid": "^10.0.0"
+  }
+}

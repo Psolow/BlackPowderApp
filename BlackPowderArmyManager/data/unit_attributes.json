@@ -1,0 +1,61 @@
+{
+    "nation": [
+        "British",
+        "Prussian",
+        "French",
+        "Austrian"
+    ],
+    "unit": [
+        "Line Infantry",
+        "Cavalry",
+        "Artillery",
+        "Light Infantry"
+    ],
+    "type": [
+        "Standard",
+        "Elite",
+        "Skirmisher"
+    ],
+    "armament": [
+        "Rifle",
+        "Musket",
+        "Pistol",
+        "Cannon"
+    ],
+    "hand-to-hand": [
+        "Bayonet",
+        "Sword",
+        "Spear"
+    ],
+    "shooting": [
+        "Accurate",
+        "Rapid",
+        "Long-Range"
+    ],
+    "morale": [
+        "High",
+        "Medium",
+        "Low"
+    ],
+    "stamina": [
+        "High",
+        "Medium",
+        "Low"
+    ],
+    "size": [
+        "Small",
+        "Medium",
+        "Large"
+    ],
+    "points": [
+        "5 Points",
+        "10 Points",
+        "15 Points",
+        "20 Points"
+    ],
+    "special": [
+        "Sharpshooter",
+        "Grenadier",
+        "Engineer"
+    ]
+}

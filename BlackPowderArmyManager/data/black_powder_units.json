@@ -1,0 +1,37 @@
+{
+  "British": [
+    {
+      "name": "line infantry",
+      "country": "British",
+      "type": "Standard",
+      "armament": "Rifle",
+      "handToHand": "Bayonet",
+      "shooting": "Accurate",
+      "morale": "High",
+      "stamina": "High",
+      "size": "Medium",
+      "points": "15 Points",
+      "special": [
+        "Engineer"
+      ]
+    },
+    {
+      "name": "line infantry",
+      "country": "British",
+      "type": "Elite",
+      "armament": "Pistol",
+      "handToHand": "Sword",
+      "shooting": "Long-Range",
+      "morale": "High",
+      "stamina": "High",
+      "size": "Small",
+      "points": "20 Points",
+      "special": [
+        "Grenadier"
+      ]
+    }
+  ],
+  "Prussian": [],
+  "French": [],
+  "Austrian": []
+}

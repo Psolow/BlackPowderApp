@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Army Creator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Army Creator</h1>
+    <form id="id-form">
+        <label for="user-id">Enter 4-digit ID:</label>
+        <input type="text" id="user-id" required maxlength="4">
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div id="army-creator" style="display:none;">
+        <label for="country-select">Choose Country:</label>
+        <select id="country-select"></select>
+
+        <label for="unit-select">Choose Unit:</label>
+        <select id="unit-select"></select>
+
+        <button id="add-unit-btn">Add Unit</button>
+        
+        <h2>Your Army:</h2>
+        <ul id="army-list"></ul>
+
+        <button id="save-army-btn">Save Army</button>
+        <a href="manage-units.html">Manage Units</a>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
