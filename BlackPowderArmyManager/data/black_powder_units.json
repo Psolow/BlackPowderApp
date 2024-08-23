@@ -9,25 +9,25 @@
       "shooting": "Accurate",
       "morale": "High",
       "stamina": "High",
-      "size": "Medium",
+      "size": "Large",
       "points": "15 Points",
       "special": [
         "Engineer"
       ]
     },
     {
-      "name": "line infantry",
+      "name": "cavalry",
       "country": "British",
-      "type": "Elite",
-      "armament": "Pistol",
-      "handToHand": "Sword",
-      "shooting": "Long-Range",
+      "type": "Standard",
+      "armament": "Rifle",
+      "handToHand": "Bayonet",
+      "shooting": "Accurate",
       "morale": "High",
       "stamina": "High",
       "size": "Small",
-      "points": "20 Points",
+      "points": "5 Points",
       "special": [
-        "Grenadier"
+        "Sharpshooter"
       ]
     }
   ],

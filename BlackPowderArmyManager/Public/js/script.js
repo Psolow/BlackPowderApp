@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const countrySelect = document.getElementById('country-select');
     const unitSelect = document.getElementById('unit-select');
     const armyList = document.getElementById('army-list');
+    const totalPointsElement = document.getElementById('total-points'); // New line
     let userId;
     let currentArmy = [];
+    let totalPoints = 0; // New line
 
     const loadAttributes = async () => {
         try {
@@ -44,6 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const response = await fetch(`/army/${id}`);
             const data = await response.json();
             currentArmy = data.army || [];
+            totalPoints = 0; // Reset total points
+            currentArmy.forEach(unit => totalPoints += parseInt(unit.points.split(' ')[0])); // Calculate total points
             renderArmyList();
         } catch (error) {
             console.error('Error loading army:', error);
@@ -74,10 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.delete-unit-btn').forEach(button => {
             button.addEventListener('click', deleteUnit);
         });
+
+        totalPointsElement.textContent = totalPoints; // Update the displayed total points
     };
 
     const deleteUnit = (e) => {
         const index = e.target.dataset.index;
+        totalPoints -= parseInt(currentArmy[index].points.split(' ')[0]); // Deduct the points of the deleted unit
         currentArmy.splice(index, 1);
         renderArmyList();
     };
@@ -99,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedUnit.country = countrySelect.value; // Add the selected country to the unit
 
         currentArmy.push(selectedUnit);
+        totalPoints += parseInt(selectedUnit.points.split(' ')[0]); // Add the points of the new unit
         renderArmyList();
     });
 
